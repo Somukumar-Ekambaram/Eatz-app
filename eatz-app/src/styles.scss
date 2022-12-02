@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Load custom fonts globally.
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('./assets/font/Poppins-Regular.ttf');
+}
+
+/* Universal selector */
+* {
+  font-family: 'Poppins-Regular';
+}
