@@ -1,0 +1,70 @@
+@import "../../scss/utilities";
+
+/* mixins */
+@mixin nav-links {
+  text-decoration: $none;
+  color: $white;
+}
+
+/* classes */
+.navbar {
+  background-color: $red;
+  height: $rem-4 + $rem-p5;
+  display: $d-flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+
+  .title {
+    width: $w-9 * 2;
+    display: $d-flex;
+    justify-content: center;
+
+    h1 {
+      color: $white;
+      margin: $margin-0;
+      font-size: $rem-2;
+
+      a {
+        @include nav-links(); // calling mixin
+      }
+    }
+  }
+
+  .mid-items {
+    width: $w-10 * 5;
+    ul {
+      display: $d-flex;
+      justify-content: space-around;
+
+      li {
+        list-style-type: $none;
+
+        a {
+          @include nav-links(); // calling mixin
+          font-size: $px-7 * 2;
+        }
+      }
+    }
+  }
+
+  .end-items {
+    width: $w-8 * 4;
+    display: $d-flex;
+    justify-content: center;
+    padding-left: $rem-5;
+
+    p {
+      margin: $margin-0;
+      color: $white;
+      font-size: $px-7 * 2;
+    }
+  }
+}
+
+.active {
+  color: $yellow !important;
+}

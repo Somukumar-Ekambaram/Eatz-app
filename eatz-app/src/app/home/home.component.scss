@@ -1,0 +1,150 @@
+@import "../shared/scss/utilities";
+
+/* classes */
+.container {
+  display: $d-block;
+
+  .top {
+    display: $d-block;
+    background-color: $lightOrange;
+    padding: 0 $w-10;
+
+    .top-wrapper {
+      height: 92.2vh;
+      align-items: center;
+      display: $d-flex;
+    }
+
+    .top-start {
+      width: $w-10 * 5;
+      padding: $rem-2;
+      padding-bottom: 14rem;
+
+      div div p {
+        margin: $margin-0;
+      }
+
+      .txt-one {
+        font-size: $rem-6 * 2;
+        font-weight: 900;
+        font-family: 'Poppins-Black';
+        color: $lightgrey;
+        letter-spacing: $px-5;
+        margin-block: -70px !important;
+      }
+
+      .txt-two {
+        font-family: 'Poppins-Bold';
+        font-size: $rem-3;
+        font-weight: 700;
+        color: $navy;
+        letter-spacing: $px-4;
+        margin-block: -20px !important;
+      }
+
+      .search-wrapper {
+        margin: $rem-3 0;
+        @include searchBox($w-10 * 8, $rem-4, ($w-2 * 10) + 3, ($rem-3 + $rem-p2), -8.7%, ($w-2 * 9), 0, 0);
+      }
+    }
+
+    .top-end {
+      width: $w-10 * 5;
+
+      img {
+        width: $w-10 * 10;
+      }
+    }
+  }
+
+
+
+  .location {
+    bottom: 3rem;
+    left: 7rem;
+    display: $d-flex;
+    position: absolute;
+
+    img {
+      width: $px-5 * 5;
+      color: $green;
+    }
+
+    :nth-child(2) p {
+      margin: 0 20px;
+      color: $white;
+      font-size: x-large;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+  }
+
+  .bottom {
+    display: $d-flex;
+    height: 92.5vh;
+    background-color: $secondary;
+    justify-content: center;
+    align-items: center;
+
+    .bottom-wrapper {
+      display: $d-block;
+      background-color: $white;
+      width: $w-5 * 13;
+
+      .content {
+        display: $d-block;
+        margin: $rem-4 $w-2 * 10;
+
+        .red-block {
+          width: $w-10 * 2;
+          height: $rem-1 - $rem-p3;
+          background-color: $red;
+          margin: $rem-1;
+        }
+
+        .search-wrapper-bottom {
+          margin: $rem-2 0;
+          display: $d-flex;
+          width: $w-10 * 10;
+          justify-content: center;
+
+          @include searchBox($w-10 * 8, $rem-4, ($w-2 * 10) + 3, ($rem-3 + $rem-p2), ($px-6 + $px-p5), 0, 0, -24%);
+        }
+
+        .ad-booking-txt {
+          font-size: $rem-2;
+          color: $navy;
+          font-family: 'Poppins-Bold';
+          letter-spacing: 2px;
+          margin: $margin-0;
+        }
+
+
+      }
+    }
+
+  }
+}
+
+.align-center {
+  display: $d-flex;
+  justify-content: center;
+}
+
+.align-evenly {
+  display: $d-flex;
+  justify-content: space-evenly;
+}
+
+.txt-strong {
+  color: $navy;
+  font-family: 'Poppins-semibold';
+  font-size: large;
+  margin-bottom: 0;
+}
+
+.txt-light {
+  color: $grey;
+  font-family: 'Poppins-medium';
+  margin: 5px 0;
+}

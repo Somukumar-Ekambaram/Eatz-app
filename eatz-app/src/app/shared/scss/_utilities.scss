@@ -1,0 +1,237 @@
+/* Default theme colors for Eatz app */
+
+// - * - * - Maps - * - * -
+// * * * colors * * *
+
+$colors: (
+  "red": #fe053c,
+  "navy": #2e266f,
+  "white": #ffffff,
+  "black": #000000,
+  "grey": #8e89b1,
+  "lightgrey": #f7ece7,
+  "lightOrange": #fef5eb,
+  "green": #40a244,
+  "secondary": #ffedde,
+  "yellow": yellow
+);
+
+// * * * sizes * * *
+// ## rems ##
+$rem: (
+  "one": 1rem,
+  "two": 2rem,
+  "three": 3rem,
+  "four": 4rem,
+  "five": 5rem,
+  "six": 6rem,
+  "seven": 7rem,
+  "eight": 8rem,
+  "nine": 9rem,
+  "pointOne": 0.1rem,
+  "pointTwo": 0.2rem,
+  "pointThree": 0.3rem,
+  "pointFour": 0.4rem,
+  "pointFive": 0.5rem,
+  "pointSix": 0.6rem,
+  "pointSeven": 0.7rem,
+  "pointEight": 0.8rem,
+  "pointNine": 0.9rem,
+);
+
+// ## pixels ##
+$pxls: (
+  "one": 1px,
+  "two": 2px,
+  "three": 3px,
+  "four": 4px,
+  "five": 5px,
+  "six": 6px,
+  "seven": 7px,
+  "eight": 8px,
+  "nine": 9px,
+  "zero": 0px,
+  "pointOne": 0.1px,
+  "pointTwo": 0.2px,
+  "pointThree": 0.3px,
+  "pointFour": 0.4px,
+  "pointFive": 0.5px,
+  "pointSix": 0.6px,
+  "pointSeven": 0.7px,
+  "pointEight": 0.8px,
+  "pointNine": 0.9px,
+);
+
+// ## Percentages ##
+$percent: (
+  "one": 1%,
+  "two": 2%,
+  "three": 3%,
+  "four": 4%,
+  "five": 5%,
+  "six": 6%,
+  "seven": 7%,
+  "eight": 8%,
+  "nine": 9%,
+  "ten": 10%,
+);
+
+// ## displays ##
+$display: (
+  "flex": flex,
+  "block": block,
+  "inline": inline,
+  "inline-flex": inline-flex,
+  "inline-block": inline-block,
+);
+
+// - * - * - Functions - * - * -
+
+@function getValue($map, $key) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  } @else {
+    @return null;
+  }
+}
+
+/* Variables */
+
+$none: none;
+
+// Functions call
+$red: getValue($colors, 'red');
+$navy: getValue($colors, 'navy');
+$white: getValue($colors, 'white');
+$black: getValue($colors, 'black');
+$grey: getValue($colors, 'grey');
+$lightgrey: getValue($colors, 'lightgrey');
+$lightOrange: getValue($colors, 'lightOrange');
+$green: getValue($colors, 'green');
+$secondary: getValue($colors, 'secondary');
+$yellow: getValue($colors, 'yellow');
+
+$rem-1: getValue($rem, 'one');
+$rem-2: getValue($rem, 'two');
+$rem-3: getValue($rem, 'three');
+$rem-4: getValue($rem, 'four');
+$rem-5: getValue($rem, 'five');
+$rem-6: getValue($rem, 'six');
+$rem-7: getValue($rem, 'seven');
+$rem-8: getValue($rem, 'eight');
+$rem-9: getValue($rem, 'nine');
+$rem-10: getValue($rem, 'ten');
+
+$rem-p1: getValue($rem, 'pointOne');
+$rem-p2: getValue($rem, 'pointTwo');
+$rem-p3: getValue($rem, 'pointThree');
+$rem-p4: getValue($rem, 'pointFour');
+$rem-p5: getValue($rem, 'pointFive');
+$rem-p6: getValue($rem, 'pointSix');
+$rem-p7: getValue($rem, 'pointSeven');
+$rem-p8: getValue($rem, 'pointEight');
+$rem-p9: getValue($rem, 'pointNine');
+
+$px-1: getValue($pxls, 'one');
+$px-2: getValue($pxls, 'two');
+$px-3: getValue($pxls, 'three');
+$px-4: getValue($pxls, 'four');
+$px-5: getValue($pxls, 'five');
+$px-6: getValue($pxls, 'six');
+$px-7: getValue($pxls, 'seven');
+$px-8: getValue($pxls, 'eight');
+$px-9: getValue($pxls, 'nine');
+$px-10: getValue($pxls, 'ten');
+
+$px-p1: getValue($pxls, 'pointOne');
+$px-p2: getValue($pxls, 'pointTwo');
+$px-p3: getValue($pxls, 'pointThree');
+$px-p4: getValue($pxls, 'pointFour');
+$px-p5: getValue($pxls, 'pointFive');
+$px-p6: getValue($pxls, 'pointSix');
+$px-p7: getValue($pxls, 'pointSeven');
+$px-p8: getValue($pxls, 'pointEight');
+$px-p9: getValue($pxls, 'pointNine');
+
+$w-1: getValue($percent, 'one');
+$w-2: getValue($percent, 'two');
+$w-3: getValue($percent, 'three');
+$w-4: getValue($percent, 'four');
+$w-5: getValue($percent, 'five');
+$w-6: getValue($percent, 'six');
+$w-7: getValue($percent, 'seven');
+$w-8: getValue($percent, 'eight');
+$w-9: getValue($percent, 'nine');
+$w-10: getValue($percent, 'ten');
+
+$d-flex: getValue($display, 'flex');
+$d-block: getValue($display, 'block');
+$d-inline: getValue($display, 'inline');
+$d-inline-flex: getValue($display, 'inline-flex');
+$d-inline-block: getValue($display, 'inline-block');
+
+
+
+
+// ------------------------------
+
+// - * - * - Margins - * - * -
+$margin-0: 0;
+
+// - * - * - Paddings - * - * -
+$padding-0: 0;
+
+
+// - * - * - Mixins - * - * -
+
+@mixin getInputStyle($width, $height) {
+  width: $width;
+  height: $height;
+  background-color: $white;
+  box-shadow: 0 0 6pt 3pt #e2ddd880;
+  border: $none;
+}
+
+@mixin getPlaceHolderStyle {
+  color: $grey;
+  letter-spacing: $px-1;
+}
+
+@mixin getBtnStyle($width, $height) {
+  width: $width;
+  height: $height;
+  background-color: $red;
+  border: $none;
+  color: $white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@mixin searchBox($width, $height, $btn-w, $btn-h, $mt, $mr, $mb, $ml) {
+
+  input[type=text] {
+    float: left;
+    padding: 0 10px;
+    font-size: large;
+    @include getInputStyle($width, $height);
+  }
+
+  button[type=button] {
+    position: relative;
+    overflow: visible;
+    float: right;
+    font-size: larger;
+    font-weight: 600;
+    @include getBtnStyle($btn-w, $btn-h);
+    margin: $mt $mr $mb $ml;
+  }
+
+  input[type=text]::placeholder {
+    font-size: large;
+    @include getPlaceHolderStyle();
+  }
+
+  input[type=text]:focus {
+    outline: 1px solid lightgrey;
+  }
+}

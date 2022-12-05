@@ -1,12 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "./app/shared/scss/utilities";
+
 // Load custom fonts globally.
 @font-face {
   font-family: 'Poppins-Regular';
   src: url('./assets/font/Poppins-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Poppins-Black';
+  src: url('./assets/font/Poppins-Black.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('./assets/font/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-semibold';
+  src: url('./assets/font/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-extrabold';
+  src: url('./assets/font/Poppins-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-light';
+  src: url('./assets/font/Poppins-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-extralight';
+  src: url('./assets/font/Poppins-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-medium';
+  src: url('./assets/font/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-thin';
+  src: url('./assets/font/Poppins-Thin.ttf');
+}
+
 /* Universal selector */
 * {
   font-family: 'Poppins-Regular';
+}
+
+body {
+  margin: $margin-0;
+  display: $d-block;
 }
