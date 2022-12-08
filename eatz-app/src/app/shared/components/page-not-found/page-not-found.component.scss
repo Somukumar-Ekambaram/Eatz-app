@@ -1,0 +1,40 @@
+@import "../../scss/utilities";
+
+.container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: $d-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $lightOrange;
+
+  .content {
+    text-align: center;
+
+    :nth-child(1) {
+      font-family: 'Poppins-extrabold';
+      font-size: $rem-10;
+      margin-block: 0 !important;
+      color: $red;
+    }
+
+    :nth-child(2) {
+      font-size: $rem-2;
+      color: $navy;
+      font-family: 'Poppins-semibold';
+      font-weight: 900;
+    }
+
+    :nth-child(3),
+    :nth-child(4) {
+      margin: 0;
+    }
+
+    button {
+      margin: $rem-3 0;
+      @include getBtnStyle($rem-3 * 5, $rem-3);
+      border-radius: $px-10 * 5;
+    }
+  }
+}

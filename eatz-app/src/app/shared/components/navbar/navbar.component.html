@@ -1,27 +1,53 @@
 <nav class="navbar">
   <div class="title">
-    <h1><a routerLink="home">eatz</a></h1>
+    <h1><a
+      routerLink="home"
+      [queryParams]="{'type': type}">eatz</a></h1>
   </div>
-  <div class="mid-items">
+  <div class="mid-items"
+    [ngStyle]="{width: isUser ? '' : '35%'}">
     <ul>
       <li>
-        <a routerLink="/home" routerLinkActive="active">Home</a>
+        <a
+          routerLink="/home"
+          routerLinkActive="active"
+          [queryParams]="{'type': type}">Home</a>
       </li>
       <li>
-        <a routerLink="/offers" routerLinkActive="active">Offers</a>
+        <a
+          routerLink="/offers"
+          routerLinkActive="active"
+          [queryParams]="{'type': type}">Offers</a>
       </li>
       <li>
-        <a routerLink="/restaurant" routerLinkActive="active">Restaurants</a>
+        <a
+          routerLink="/restaurant"
+          routerLinkActive="active"
+          [queryParams]="{'type': type}">Restaurants</a>
+      </li>
+      <li *ngIf="isUser">
+        <a
+          routerLink="/orders"
+          routerLinkActive="active"
+          [queryParams]="{'type': type}">Orders</a>
       </li>
       <li>
-        <a routerLink="/orders" routerLinkActive="active">Orders</a>
-      </li>
-      <li>
-        <a routerLink="/login" routerLinkActive="active">Account</a>
+        <a
+          routerLink="/account"
+          routerLinkActive="active"
+          [queryParams]="{'type': type}">Account</a>
       </li>
     </ul>
   </div>
-  <div class="end-items">
-    <p>Cart</p>
+  <div class="end-items"
+    [ngStyle]="{width: isUser ? '' : '42%'}">
+    <ul>
+      <li *ngIf="type">
+        <a href="#">Cart</a>
+      </li>
+      <li *ngIf="type">
+        <a routerLink="/login">Logout</a>
+      </li>
+    </ul>
   </div>
 </nav>

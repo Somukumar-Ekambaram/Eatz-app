@@ -1,0 +1,109 @@
+@import "../shared/scss/utilities";
+
+.container {
+  position: relative;
+  height: 92.2vh;
+  background-color: $lightOrange;
+  padding: $rem-2 $rem-7 + $rem-p5;
+  overflow-y: auto;
+
+  .title {
+
+    p {
+      @include title();
+    }
+  }
+
+  .orders-list {
+    display: $d-block;
+
+    .orders-item {
+      margin: $rem-2 0;
+      padding: $rem-1;
+      height: 7.5rem;
+      background-color: $secondary;
+      box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+      display: $d-flex;
+
+      .img-section {
+        width: $w-5 * 2;
+        margin-right: $rem-2;
+
+        img {
+          width: $w-10 * 10;
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+
+      .detail-section {
+        width: $w-10 * 2;
+        margin-right: $rem-2;
+        overflow-y: auto;
+
+        .p {
+          width: 100%;
+          margin: 0 0 5px 0;
+        }
+
+        .res-name {
+          font-family: 'Poppins-Bold';
+          letter-spacing: 1px;
+        }
+
+        .medium-txt {
+          font-family: 'Poppins-semibold';
+          font-size: small;
+        }
+
+        .small-txt {
+          font-family: 'Poppins-Regular';
+          font-size: x-small;
+          color: $darkgrey;
+          font-weight: 900;
+          text-align: start;
+
+        }
+
+        .items {
+          margin: 0.5rem 0;
+          color: $darkgrey;
+          font-size: x-small;
+        }
+      }
+
+      .price-section {
+        width: $w-10 * 7;
+        float: right;
+        text-align: end;
+
+        p {
+          width: 100%;
+          margin: 0 0 5px 0;
+        }
+
+        .order-date-txt {
+          font-family: 'Poppins-Regular';
+          font-size: small;
+
+        }
+
+        .btns {
+          display: $d-flex;
+          flex-direction: flex-end;
+          width: $w-10 * 10;
+          margin-top: $rem-2;
+          justify-content: end;
+
+          .btn {
+            margin-left: $rem-1;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            @include getBtnStyle($rem-9, $rem-2)
+          }
+        }
+      }
+
+    }
+  }
+}

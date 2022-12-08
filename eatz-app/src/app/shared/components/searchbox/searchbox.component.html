@@ -1,0 +1,19 @@
+<form class="search-input" (ngSubmit)="onSubmit()">
+  <a href="" target="_blank" hidden></a>
+  <input
+    type="text"
+    placeholder="Search Restaurents"
+    [(ngModel)]="searchtext"
+    [ngModelOptions]="{standalone: true}"
+    (input)="isSelected = false; !searchtext ? onSubmit() : '' " />
+  <div class="autocom-box" >
+    <div class="filtered-list" [ngClass]="!searchtext ? 'hide-list' : ''" *ngFor="let data of suggestions | filter: searchtext">
+      <div *ngIf="!isSelected && searchtext">
+        <span (click)="onSelect(data)"><p>{{ data?.name }}</p></span>
+      </div>
+    </div>
+  </div>
+  <div class="icon">
+    <button type="submit">GO</button>
+  </div>
+</form>

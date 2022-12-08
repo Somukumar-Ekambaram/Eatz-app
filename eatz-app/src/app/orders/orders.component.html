@@ -1,1 +1,33 @@
-<p>orders works!</p>
+<div class="container">
+
+  <div class="title">
+    <p>Your Orders</p>
+  </div>
+
+  <div class="orders-list">
+    <div class="orders-item" *ngFor="let data of ordersDetails; let i = index" [ngStyle]="{}">
+      <div class="img-section">
+        <img [src]="imageURL + data?.imageId" alt="">
+      </div>
+      <div class="detail-section">
+        <p class="p res-name">{{ data?.restaurant }}</p>
+        <p class="p medium-txt">{{ data?.location }}</p>
+        <p class="p small-txt">ORDER #{{ data?.id }}</p>
+        <p class="items" *ngFor="let orderItem of data.orderItems">
+          {{ orderItem.name }} x {{ orderItem?.quantity }}
+        </p>
+      </div>
+      <div class="price-section">
+        <p class="order-date-txt">{{ data?.status }} on {{ onGetDateFormat(data?.orderDateTime || '') | date:"MMM dd YYYY, hh:mm a" }}</p>
+        <p class="order-date-txt">Total : ${{ data?.price?.total }}</p>
+
+        <div class="btns">
+          <button class="btn">View Details</button>
+          <button class="btn" *ngIf="data?.status == 'ORDERED'">Track Order</button>
+          <button class="btn" *ngIf="data?.status == 'ORDERED'">Cancel Order</button>
+        </div>
+      </div>
+    </div>
+    <button>see more</button>
+  </div>
+</div>

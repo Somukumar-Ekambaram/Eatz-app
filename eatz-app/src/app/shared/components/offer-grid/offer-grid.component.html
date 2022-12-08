@@ -1,0 +1,22 @@
+
+<div class="list-section">
+
+  <div class="list-items" *ngFor="let data of offers" [ngClass]="!data?.available ? 'not-available' : ''">
+    <div>
+      <img [src]="imgUrl + data.cloudinaryImageId" alt="">
+    </div>
+    <div class="price-section">
+      <div>
+        <p>{{ data?.name }}</p>
+        <p class="dark-txt">{{ data?.restaurant }}</p>
+        <p class="discount-txt">Delivery in {{ data?.deliveryTimeInMins }} mins</p>
+      </div>
+      <div>
+        <p class="cost-price-txt">{{ data?.price?.costPrice }}</p>
+        <p class="discount-price-txt">{{ data?.price?.discountPrice }}</p>
+        <button class="see-more-btn" *ngIf="urlpath !== 'HomeComponent' ">add to cart</button>
+      </div>
+    </div>
+  </div>
+
+</div>

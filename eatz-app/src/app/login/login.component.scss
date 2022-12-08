@@ -30,7 +30,7 @@
       .ip {
         margin: $rem-1 0;
         padding: 0 $rem-p5;
-        @include getInputStyle($w-10 * 7, $rem-3);
+        @include getInputStyle($w-7 * 10, $rem-3);
       }
 
       .ip::placeholder {
@@ -47,6 +47,24 @@
         letter-spacing: $px-2;
         @include getBtnStyle(($w-10 * 7) + $w-3, $rem-3);
       }
+
+      .disabled-btn {
+        background-color: $disabled;
+      }
+
+      .err {
+        border: 1.5px solid $red;
+      }
+
+      .err::placeholder {
+        color: $red;
+      }
     }
   }
+}
+
+.url {
+  text-decoration: none;
+  color: $navy;
+  cursor: pointer;
 }

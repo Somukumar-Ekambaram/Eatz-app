@@ -1,0 +1,17 @@
+@import "../shared/scss/utilities";
+
+.container-fluid {
+  height: 100vh;
+  background-color: $lightOrange;
+  padding: $rem-3 $rem-7 + $rem-p5;
+  position: relative;
+  overflow-y: auto;
+  width: $w-10 * 10;
+
+  .title {
+
+    p {
+      @include title();
+    }
+  }
+}

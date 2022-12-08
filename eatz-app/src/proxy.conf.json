@@ -1,0 +1,8 @@
+{
+  "/json": {
+    "target": "https://geolocation-db.com",
+    "Secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

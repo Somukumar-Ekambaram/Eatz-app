@@ -13,11 +13,8 @@
             <p class="txt-two">& Delicious Food</p>
           </div>
         </div>
-        <div>
-          <form class="search-wrapper">
-            <input type="text" placeholder="Search Restaurants">
-            <button type="button">GO</button>
-          </form>
+        <div class="auto-com" style="margin: 3rem 0 !important;">
+          <app-searchbox [suggestions]="restuarantDetail" (sendRestuarentName)="onReceiveRestaurantName($event)"></app-searchbox>
         </div>
       </div>
       <div class="top-end">
@@ -29,7 +26,7 @@
         <img src="../../assets/icons/location-dot-solid.svg" alt="">
       </div>
       <div>
-        <p>Chennai</p>
+        <p>{{ geoLocation?.country_name }}</p>
       </div>
     </div>
   </section>
@@ -43,20 +40,17 @@
         <div class="align-center">
           <p class="ad-booking-txt">advance booking</p>
         </div>
-        <div>
-          <form class="search-wrapper-bottom">
-            <input type="text" placeholder="Search Restaurants">
-            <button type="button">GO</button>
-          </form>
+        <div class="auto-com">
+          <app-searchbox [suggestions]="restuarantDetail" (sendRestuarentName)="onReceiveRestaurantName($event)"></app-searchbox>
         </div>
         <div class="align-evenly">
           <div>
             <p class="txt-strong">Date</p>
-            <p class="txt-light">12-12-12</p>
+            <input class="txt-light custom-date-picker" type="date">
           </div>
           <div>
             <p class="txt-strong">Time</p>
-            <p class="txt-light">12:12:12</p>
+            <input type="time" class="txt-light custom-date-picker" name="" id="">
           </div>
           <div>
             <p class="txt-strong">Guests</p>
@@ -66,4 +60,34 @@
       </div>
     </div>
   </section>
+  <section class="offer-fluid">
+    <div class="offer-title">
+      <p>Explore Our Food</p>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+      <p>tempor invidunt ut labore et dolore magna</p>
+    </div>
+    <app-offer-grid></app-offer-grid>
+  </section>
+  <footer>
+    <span>&#169; <small class="small-txt">2022 Indianpix</small></span>
+    <div>
+      <div class="icons">
+        <img src="../../assets/icons/facebook.svg" alt="">
+      </div>
+      <div class="icons">
+        <img src="../../assets/icons/linkedin.svg" alt="">
+      </div>
+      <div class="icons">
+        <img src="../../assets/icons/twitter.svg" alt="">
+      </div>
+      <div class="icons">
+        <img src="../../assets/icons/youtube.svg" alt="">
+      </div>
+      &#169;&nbsp;<small class="small-txt"> 2022 Indianpix</small>
+    </div>
+  </footer>
 </div>
+<!-- <div class="spinner">
+  <div class="lds-ripple"><div></div><div></div></div>
+</div> -->
+

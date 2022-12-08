@@ -9,11 +9,13 @@ $colors: (
   "white": #ffffff,
   "black": #000000,
   "grey": #8e89b1,
+  "darkgrey": #505050,
   "lightgrey": #f7ece7,
   "lightOrange": #fef5eb,
   "green": #40a244,
   "secondary": #ffedde,
-  "yellow": yellow
+  "yellow": yellow,
+  "disabled": #e495a6
 );
 
 // * * * sizes * * *
@@ -28,6 +30,7 @@ $rem: (
   "seven": 7rem,
   "eight": 8rem,
   "nine": 9rem,
+  "ten": 10rem,
   "pointOne": 0.1rem,
   "pointTwo": 0.2rem,
   "pointThree": 0.3rem,
@@ -50,7 +53,7 @@ $pxls: (
   "seven": 7px,
   "eight": 8px,
   "nine": 9px,
-  "zero": 0px,
+  "ten": 10px,
   "pointOne": 0.1px,
   "pointTwo": 0.2px,
   "pointThree": 0.3px,
@@ -110,6 +113,8 @@ $lightOrange: getValue($colors, 'lightOrange');
 $green: getValue($colors, 'green');
 $secondary: getValue($colors, 'secondary');
 $yellow: getValue($colors, 'yellow');
+$disabled: getValue($colors, 'disabled');
+$darkgrey: getValue($colors, 'darkgrey');
 
 $rem-1: getValue($rem, 'one');
 $rem-2: getValue($rem, 'two');
@@ -207,31 +212,11 @@ $padding-0: 0;
   cursor: pointer;
 }
 
-@mixin searchBox($width, $height, $btn-w, $btn-h, $mt, $mr, $mb, $ml) {
-
-  input[type=text] {
-    float: left;
-    padding: 0 10px;
-    font-size: large;
-    @include getInputStyle($width, $height);
-  }
-
-  button[type=button] {
-    position: relative;
-    overflow: visible;
-    float: right;
-    font-size: larger;
-    font-weight: 600;
-    @include getBtnStyle($btn-w, $btn-h);
-    margin: $mt $mr $mb $ml;
-  }
-
-  input[type=text]::placeholder {
-    font-size: large;
-    @include getPlaceHolderStyle();
-  }
-
-  input[type=text]:focus {
-    outline: 1px solid lightgrey;
-  }
+@mixin title() {
+  font-family: 'Poppins-Regular';
+  color: $navy;
+  font-size: $rem-1 + $rem-p6;
+  margin: $px-6 0 0 0;
+  font-weight: 900;
+  letter-spacing: 2px;
 }

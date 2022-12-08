@@ -1,0 +1,102 @@
+@import "../../scss/utilities";
+
+
+.not-available {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.list-section {
+  margin: $rem-2 0;
+  display: $d-inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .list-items {
+    width: $rem-4 * 6;
+    height: $rem-7 * 4;
+    margin: $rem-2 $rem-3 + $rem-p4;
+    background-color: $white;
+    border: 1px solid $lightgrey;
+    border-radius: $px-10;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+
+    img {
+      width: $w-10 * 10;
+      height: $rem-10 + $rem-7;
+      border-top-left-radius: $px-10;
+      border-top-right-radius: $px-10;
+      object-fit: cover;
+    }
+
+    .price-section {
+      display: $d-flex;
+      padding: $rem-1;
+
+      :nth-child(1),
+      :nth-child(2) {
+        display: $d-block;
+        width: $w-10 * 10;
+      }
+
+      :nth-child(1) {
+
+        p {
+          margin: 0 0 0.5rem 0;
+          color: $black;
+          font-family: 'Poppins-Regular';
+          font-weight: 500;
+          font-size: large;
+        }
+
+        .dark-txt {
+          color: $black;
+          font-family: 'Poppins-Bold';
+          font-weight: 500;
+          font-size: small;
+        }
+
+        .grey-txt {
+          color: $grey;
+          font-family: 'Poppins-Regular';
+          font-weight: 500;
+        }
+
+        .discount-txt {
+          color: $black;
+          font-size: smaller;
+          font-family: 'Poppins-light';
+          margin: 0.3rem 0;
+        }
+      }
+
+      :nth-child(2) {
+
+        .discount-price-txt {
+          text-align: end;
+          font-family: 'Georgia';
+          font-size: large;
+          font-weight: 600;
+          color: orange;
+          margin: 0;
+        }
+
+        .cost-price-txt {
+          text-align: end;
+          color: $darkgrey;
+          font-family: 'Georgia';
+          text-decoration: line-through;
+          margin: 0 10 0 0;
+        }
+
+        .see-more-btn {
+          float: right;
+          margin-top: $rem-2 - $rem-p5;
+          font-weight: bold;
+          @include getBtnStyle(($rem-7 + $rem-p5), ($rem-2 + $rem-p5));
+        }
+      }
+    }
+  }
+}

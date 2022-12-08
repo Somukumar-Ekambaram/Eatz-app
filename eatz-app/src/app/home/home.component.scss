@@ -27,24 +27,19 @@
       .txt-one {
         font-size: $rem-6 * 2;
         font-weight: 900;
-        font-family: 'Poppins-Black';
+        font-family: "Poppins-Black";
         color: $lightgrey;
         letter-spacing: $px-5;
         margin-block: -70px !important;
       }
 
       .txt-two {
-        font-family: 'Poppins-Bold';
+        font-family: "Poppins-Bold";
         font-size: $rem-3;
         font-weight: 700;
         color: $navy;
         letter-spacing: $px-4;
         margin-block: -20px !important;
-      }
-
-      .search-wrapper {
-        margin: $rem-3 0;
-        @include searchBox($w-10 * 8, $rem-4, ($w-2 * 10) + 3, ($rem-3 + $rem-p2), -8.7%, ($w-2 * 9), 0, 0);
       }
     }
 
@@ -57,13 +52,17 @@
     }
   }
 
-
-
   .location {
     bottom: 3rem;
-    left: 7rem;
+    left: -2rem;
     display: $d-flex;
     position: absolute;
+    justify-content: center;
+    width: $rem-5 * 3;
+    background-color: $red;
+    padding: $rem-1 $rem-2;
+    align-items: center;
+    border-radius: $px-5 * 10;
 
     img {
       width: $px-5 * 5;
@@ -73,7 +72,7 @@
     :nth-child(2) p {
       margin: 0 20px;
       color: $white;
-      font-size: x-large;
+      font-size: $rem-1 + $rem-p1;
       font-weight: 600;
       letter-spacing: 2px;
     }
@@ -102,28 +101,22 @@
           margin: $rem-1;
         }
 
-        .search-wrapper-bottom {
-          margin: $rem-2 0;
-          display: $d-flex;
-          width: $w-10 * 10;
-          justify-content: center;
-
-          @include searchBox($w-10 * 8, $rem-4, ($w-2 * 10) + 3, ($rem-3 + $rem-p2), ($px-6 + $px-p5), 0, 0, -24%);
-        }
-
         .ad-booking-txt {
           font-size: $rem-2;
           color: $navy;
-          font-family: 'Poppins-Bold';
+          font-family: "Poppins-Bold";
           letter-spacing: 2px;
           margin: $margin-0;
         }
-
-
       }
     }
-
   }
+}
+
+.auto-com {
+  margin: $rem-3 auto;
+  width: $w-10 * 8;
+  display: block;
 }
 
 .align-center {
@@ -138,13 +131,88 @@
 
 .txt-strong {
   color: $navy;
-  font-family: 'Poppins-semibold';
+  font-family: "Poppins-semibold";
   font-size: large;
   margin-bottom: 0;
 }
 
 .txt-light {
   color: $grey;
-  font-family: 'Poppins-medium';
+  font-family: "Poppins-medium";
   margin: 5px 0;
 }
+
+.custom-date-picker {
+  outline: none;
+  border: none;
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url("../../assets/icons/caret-down-solid.svg") no-repeat;
+  width: 10px;
+  height: 10px;
+  left: 2px;
+  border-width: thin;
+}
+
+.offer-fluid {
+  background-color: $lightOrange;
+  padding: $rem-3 $rem-7 + $rem-p5;
+  position: relative;
+  overflow-y: auto;
+
+  .offer-title {
+    text-align: center;
+    margin: $rem-2 0;
+
+    :nth-child(1) {
+      font-family: 'Poppins-light';
+      color: $navy;
+      font-weight: 500;
+      font-size: 25px;
+    }
+
+    :nth-child(2),
+    :nth-child(3) {
+      color: $grey;
+      font-size: 12px;
+    }
+  }
+
+}
+
+footer {
+  background-color: $lightOrange;
+  padding: $rem-3 $rem-10;
+  display: flex;
+
+  .small-txt {
+    color: $black;
+  }
+
+  span {
+    width: 40%;
+  }
+
+  div {
+    display: flex;
+    width: 60%;
+    justify-content: end;
+
+    .icons {
+      width: 20px;
+      margin: 0 $rem-2;
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+

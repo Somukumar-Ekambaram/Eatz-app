@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { SharedSubjectService } from './shared/services/shared-subject.service';
 import { SharedModule } from './shared/shared.module';
 
 /**
@@ -14,15 +14,17 @@ import { SharedModule } from './shared/shared.module';
  */
 @NgModule({
     declarations: [
-        AppComponent,
-        NavbarComponent
+        AppComponent
     ],
-    providers: [],
+    providers: [SharedSubjectService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        SharedModule
+        SharedModule.forRoot(),
+    ],
+    schemas: [
+      CUSTOM_ELEMENTS_SCHEMA
     ]
 })
 export class AppModule { }

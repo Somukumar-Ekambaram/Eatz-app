@@ -53,14 +53,21 @@
 
   .end-items {
     width: $w-8 * 4;
-    display: $d-flex;
-    justify-content: center;
     padding-left: $rem-5;
 
-    p {
-      margin: $margin-0;
-      color: $white;
-      font-size: $px-7 * 2;
+    ul {
+      display: $d-flex;
+      justify-content: end;
+
+      li {
+        list-style-type: none;
+        margin-right: 5rem;
+
+        a {
+          @include nav-links(); // calling mixin
+          font-size: $px-7 * 2;
+        }
+      }
     }
   }
 }
