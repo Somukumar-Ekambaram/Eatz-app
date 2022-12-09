@@ -13,7 +13,7 @@
     text-align: center;
 
     :nth-child(1) {
-      font-family: 'Poppins-extrabold';
+      font-family: "Poppins-extrabold";
       font-size: $rem-10;
       margin-block: 0 !important;
       color: $red;
@@ -22,7 +22,7 @@
     :nth-child(2) {
       font-size: $rem-2;
       color: $navy;
-      font-family: 'Poppins-semibold';
+      font-family: "Poppins-semibold";
       font-weight: 900;
     }
 

@@ -75,3 +75,49 @@
 .active {
   color: $yellow !important;
 }
+
+.count {
+  background-color: $white;
+  padding: $px-1;
+  font-weight: 900;
+  font-size: xx-small;
+  border-radius: $w-10 * 5;
+  color: $green;
+  margin-left: $px-3;
+}
+
+.carot-down {
+  width: 12px;
+  color: $white;
+  //background-color: white !important;
+  margin: -3px 0.5rem;
+}
+
+.drop-down {
+  position: relative;
+
+  .drop-down-box {
+    position: absolute;
+    opacity: 1;
+    background-color: $white;
+    z-index: 3;
+    width: max-content;
+    max-height: 10rem;
+    overflow-y: auto;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    .li-item {
+      padding: 1rem;
+      font-size: 12px;
+      text-align: start;
+      margin: $margin-0;
+      display: $d-block;
+    }
+
+    .li-item:hover {
+      background-color: $lightgrey;
+      cursor: pointer;
+    }
+  }
+}

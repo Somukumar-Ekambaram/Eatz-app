@@ -4,6 +4,12 @@ import { RestaurantComponent } from './restaurant.component';
 
 const routes: Routes = [{ path: '', component: RestaurantComponent }];
 
+/**
+ *
+ *
+ * @export
+ * @class RestaurantRoutingModule
+ */
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

@@ -1,46 +1,79 @@
 <div class="container">
   <div class="row">
     <div class="column-1">
-      <img src="../../assets/images/LoginImage.png" alt="">
+      <img src="../../assets/images/LoginImage.png" alt="" />
     </div>
     <div class="column-2">
       <h2>Login into Eatz</h2>
-      <form (ngSubmit)="onSubmit(loginForm, 'user')" #loginForm="ngForm" autocomplete="off">
-        <div>
-          <input type="text"
-            class="ip"
-            [placeholder]="
-              loginForm.controls['username']?.touched &&
-              loginForm.controls['username']?.errors ? 'Username is required' : 'Username'"
-            ngModel
-            name="username"
-            required
-            [ngClass]="loginForm.controls['username']?.touched &&
-              loginForm.controls['username']?.errors ? 'err' : ''">
-        </div>
-        <div>
-          <input type="password"
-            class="ip"
-            [placeholder]="loginForm.controls['password']?.touched &&
-              loginForm.controls['password']?.errors ? 'Password is required' : 'Password'"
-            ngModel
-            name="password"
-            required
-            minlength="6"
-            [ngClass]="loginForm.controls['password']?.touched &&
-              loginForm.controls['password']?.errors ? 'err' : ''">
-        </div>
-        <div>
-          <button type="submit"
-            class="login-btn"
-              [disabled]="!loginForm.valid" [ngClass]="!loginForm.valid ? 'disabled-btn' : '' ">login</button>
-        </div>
-        <div class="error-msgs">
-        </div>
-      </form>
+    </div>
+
+    <!-- Template Driven Form for Login -->
+    <form
+      (ngSubmit)="onSubmit(loginForm, 'user')"
+      #loginForm="ngForm"
+      autocomplete="off"
+    >
       <div>
-        <small><a class="url" (click)="onSubmit(loginForm, 'guest')">Login as a Guest</a></small>
+        <input
+          type="text"
+          class="ip"
+          [placeholder]="
+            loginForm.controls['username']?.touched &&
+            loginForm.controls['username']?.errors
+              ? 'Username is required'
+              : 'Username'
+          "
+          ngModel
+          name="username"
+          required
+          [ngClass]="
+            loginForm.controls['username']?.touched &&
+            loginForm.controls['username']?.errors
+              ? 'err'
+              : ''
+          "
+        />
       </div>
+      <div>
+        <input
+          type="password"
+          class="ip"
+          [placeholder]="
+            loginForm.controls['password']?.touched &&
+            loginForm.controls['password']?.errors
+              ? 'Password is required'
+              : 'Password'
+          "
+          ngModel
+          name="password"
+          required
+          minlength="6"
+          [ngClass]="
+            loginForm.controls['password']?.touched &&
+            loginForm.controls['password']?.errors
+              ? 'err'
+              : ''
+          "
+        />
+      </div>
+      <div>
+        <button
+          type="submit"
+          class="login-btn"
+          [disabled]="!loginForm.valid"
+          [ngClass]="!loginForm.valid ? 'disabled-btn' : ''"
+        >
+          login
+        </button>
+      </div>
+      <div class="error-msgs"></div>
+    </form>
+    <div>
+      <small
+        ><a class="url" (click)="onSubmit(loginForm, 'guest')"
+          >Login as a Guest</a
+        ></small
+      >
     </div>
   </div>
 </div>

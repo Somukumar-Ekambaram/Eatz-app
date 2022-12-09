@@ -1,52 +1,73 @@
 <nav class="navbar">
   <div class="title">
-    <h1><a
-      routerLink="home"
-      [queryParams]="{'type': type}">eatz</a></h1>
+    <h1><a routerLink="home" [queryParams]="{ type: type }">eatz</a></h1>
   </div>
-  <div class="mid-items"
-    [ngStyle]="{width: isUser ? '' : '35%'}">
+  <div class="mid-items" [ngStyle]="{ width: isUser ? '' : '35%' }">
     <ul>
       <li>
         <a
           routerLink="/home"
           routerLinkActive="active"
-          [queryParams]="{'type': type}">Home</a>
+          [queryParams]="{ type: type }"
+          >Home</a
+        >
       </li>
       <li>
         <a
           routerLink="/offers"
           routerLinkActive="active"
-          [queryParams]="{'type': type}">Offers</a>
+          [queryParams]="{ type: type }"
+          >Offers</a
+        >
       </li>
       <li>
         <a
           routerLink="/restaurant"
           routerLinkActive="active"
-          [queryParams]="{'type': type}">Restaurants</a>
+          [queryParams]="{ type: type }"
+          >Restaurants</a
+        >
       </li>
       <li *ngIf="isUser">
         <a
           routerLink="/orders"
           routerLinkActive="active"
-          [queryParams]="{'type': type}">Orders</a>
+          [queryParams]="{ type: type }"
+          >Orders</a
+        >
       </li>
       <li>
         <a
           routerLink="/account"
           routerLinkActive="active"
-          [queryParams]="{'type': type}">Account</a>
+          [queryParams]="{ type: type }"
+          >Account</a
+        >
       </li>
     </ul>
   </div>
-  <div class="end-items"
-    [ngStyle]="{width: isUser ? '' : '42%'}">
+  <div class="end-items" [ngStyle]="{ width: isUser ? '' : '42%' }">
     <ul>
-      <li *ngIf="type">
-        <a href="#">Cart</a>
+      <li *ngIf="type" class="drop-down">
+        <a (click)="onViewCart()"
+          >Cart
+          <sup class="count" *ngIf="cartCount > 0"
+            >&nbsp;{{ cartCount }}&nbsp;</sup
+          >
+          <img
+            class="carot-down"
+            src="../../../../assets/icons/caret-down-solid-white.svg"
+          />
+        </a>
+
+        <div class="drop-down-box" *ngIf="isCartClicked">
+          <div *ngFor="let data of cartDetails">
+            <p class="li-item">{{ data?.name }}</p>
+          </div>
+        </div>
       </li>
       <li *ngIf="type">
-        <a routerLink="/login">Logout</a>
+        <a style="cursor: pointer" (click)="onLogout()">Logout</a>
       </li>
     </ul>
   </div>

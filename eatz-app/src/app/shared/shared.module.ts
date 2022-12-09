@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -7,44 +7,37 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { FilterPipe } from './pipes/filter.pipe';
-import { SharedSubjectService } from './services/shared-subject.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AuthGuard } from './guards/auth.guard';
 import { OfferGridComponent } from './components/offer-grid/offer-grid.component';
+import { PermissionGuard } from './guards/permission.guard';
+import { ModalComponent } from './components/modal/modal.component';
 
+/**
+ *
+ *
+ * @export
+ * @class SharedModule
+ */
 @NgModule({
   declarations: [
     NavbarComponent,
     SearchboxComponent,
     FilterPipe,
     PageNotFoundComponent,
-    OfferGridComponent
+    OfferGridComponent,
+    ModalComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule
-  ],
+  imports: [CommonModule, FormsModule, HttpClientModule, RouterModule],
   exports: [
     FormsModule,
     HttpClientModule,
     NavbarComponent,
     SearchboxComponent,
     FilterPipe,
-    OfferGridComponent
+    OfferGridComponent,
+    ModalComponent,
   ],
-  providers: [
-    HttpService,
-    SharedSubjectService,
-    AuthGuard
-  ]
+  providers: [HttpService, AuthGuard, PermissionGuard],
 })
-export class SharedModule {
-  static forRoot(): ModuleWithProviders<any> {
-    return {
-      ngModule: SharedModule,
-      providers: [SharedSubjectService]
-    };
-  }
- }
+export class SharedModule {}

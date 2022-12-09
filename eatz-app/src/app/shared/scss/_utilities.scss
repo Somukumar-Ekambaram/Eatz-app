@@ -15,7 +15,7 @@ $colors: (
   "green": #40a244,
   "secondary": #ffedde,
   "yellow": yellow,
-  "disabled": #e495a6
+  "disabled": #e495a6,
 );
 
 // * * * sizes * * *
@@ -103,80 +103,77 @@ $display: (
 $none: none;
 
 // Functions call
-$red: getValue($colors, 'red');
-$navy: getValue($colors, 'navy');
-$white: getValue($colors, 'white');
-$black: getValue($colors, 'black');
-$grey: getValue($colors, 'grey');
-$lightgrey: getValue($colors, 'lightgrey');
-$lightOrange: getValue($colors, 'lightOrange');
-$green: getValue($colors, 'green');
-$secondary: getValue($colors, 'secondary');
-$yellow: getValue($colors, 'yellow');
-$disabled: getValue($colors, 'disabled');
-$darkgrey: getValue($colors, 'darkgrey');
+$red: getValue($colors, "red");
+$navy: getValue($colors, "navy");
+$white: getValue($colors, "white");
+$black: getValue($colors, "black");
+$grey: getValue($colors, "grey");
+$lightgrey: getValue($colors, "lightgrey");
+$lightOrange: getValue($colors, "lightOrange");
+$green: getValue($colors, "green");
+$secondary: getValue($colors, "secondary");
+$yellow: getValue($colors, "yellow");
+$disabled: getValue($colors, "disabled");
+$darkgrey: getValue($colors, "darkgrey");
 
-$rem-1: getValue($rem, 'one');
-$rem-2: getValue($rem, 'two');
-$rem-3: getValue($rem, 'three');
-$rem-4: getValue($rem, 'four');
-$rem-5: getValue($rem, 'five');
-$rem-6: getValue($rem, 'six');
-$rem-7: getValue($rem, 'seven');
-$rem-8: getValue($rem, 'eight');
-$rem-9: getValue($rem, 'nine');
-$rem-10: getValue($rem, 'ten');
+$rem-1: getValue($rem, "one");
+$rem-2: getValue($rem, "two");
+$rem-3: getValue($rem, "three");
+$rem-4: getValue($rem, "four");
+$rem-5: getValue($rem, "five");
+$rem-6: getValue($rem, "six");
+$rem-7: getValue($rem, "seven");
+$rem-8: getValue($rem, "eight");
+$rem-9: getValue($rem, "nine");
+$rem-10: getValue($rem, "ten");
 
-$rem-p1: getValue($rem, 'pointOne');
-$rem-p2: getValue($rem, 'pointTwo');
-$rem-p3: getValue($rem, 'pointThree');
-$rem-p4: getValue($rem, 'pointFour');
-$rem-p5: getValue($rem, 'pointFive');
-$rem-p6: getValue($rem, 'pointSix');
-$rem-p7: getValue($rem, 'pointSeven');
-$rem-p8: getValue($rem, 'pointEight');
-$rem-p9: getValue($rem, 'pointNine');
+$rem-p1: getValue($rem, "pointOne");
+$rem-p2: getValue($rem, "pointTwo");
+$rem-p3: getValue($rem, "pointThree");
+$rem-p4: getValue($rem, "pointFour");
+$rem-p5: getValue($rem, "pointFive");
+$rem-p6: getValue($rem, "pointSix");
+$rem-p7: getValue($rem, "pointSeven");
+$rem-p8: getValue($rem, "pointEight");
+$rem-p9: getValue($rem, "pointNine");
 
-$px-1: getValue($pxls, 'one');
-$px-2: getValue($pxls, 'two');
-$px-3: getValue($pxls, 'three');
-$px-4: getValue($pxls, 'four');
-$px-5: getValue($pxls, 'five');
-$px-6: getValue($pxls, 'six');
-$px-7: getValue($pxls, 'seven');
-$px-8: getValue($pxls, 'eight');
-$px-9: getValue($pxls, 'nine');
-$px-10: getValue($pxls, 'ten');
+$px-1: getValue($pxls, "one");
+$px-2: getValue($pxls, "two");
+$px-3: getValue($pxls, "three");
+$px-4: getValue($pxls, "four");
+$px-5: getValue($pxls, "five");
+$px-6: getValue($pxls, "six");
+$px-7: getValue($pxls, "seven");
+$px-8: getValue($pxls, "eight");
+$px-9: getValue($pxls, "nine");
+$px-10: getValue($pxls, "ten");
 
-$px-p1: getValue($pxls, 'pointOne');
-$px-p2: getValue($pxls, 'pointTwo');
-$px-p3: getValue($pxls, 'pointThree');
-$px-p4: getValue($pxls, 'pointFour');
-$px-p5: getValue($pxls, 'pointFive');
-$px-p6: getValue($pxls, 'pointSix');
-$px-p7: getValue($pxls, 'pointSeven');
-$px-p8: getValue($pxls, 'pointEight');
-$px-p9: getValue($pxls, 'pointNine');
+$px-p1: getValue($pxls, "pointOne");
+$px-p2: getValue($pxls, "pointTwo");
+$px-p3: getValue($pxls, "pointThree");
+$px-p4: getValue($pxls, "pointFour");
+$px-p5: getValue($pxls, "pointFive");
+$px-p6: getValue($pxls, "pointSix");
+$px-p7: getValue($pxls, "pointSeven");
+$px-p8: getValue($pxls, "pointEight");
+$px-p9: getValue($pxls, "pointNine");
 
-$w-1: getValue($percent, 'one');
-$w-2: getValue($percent, 'two');
-$w-3: getValue($percent, 'three');
-$w-4: getValue($percent, 'four');
-$w-5: getValue($percent, 'five');
-$w-6: getValue($percent, 'six');
-$w-7: getValue($percent, 'seven');
-$w-8: getValue($percent, 'eight');
-$w-9: getValue($percent, 'nine');
-$w-10: getValue($percent, 'ten');
+$w-1: getValue($percent, "one");
+$w-2: getValue($percent, "two");
+$w-3: getValue($percent, "three");
+$w-4: getValue($percent, "four");
+$w-5: getValue($percent, "five");
+$w-6: getValue($percent, "six");
+$w-7: getValue($percent, "seven");
+$w-8: getValue($percent, "eight");
+$w-9: getValue($percent, "nine");
+$w-10: getValue($percent, "ten");
 
-$d-flex: getValue($display, 'flex');
-$d-block: getValue($display, 'block');
-$d-inline: getValue($display, 'inline');
-$d-inline-flex: getValue($display, 'inline-flex');
-$d-inline-block: getValue($display, 'inline-block');
-
-
-
+$d-flex: getValue($display, "flex");
+$d-block: getValue($display, "block");
+$d-inline: getValue($display, "inline");
+$d-inline-flex: getValue($display, "inline-flex");
+$d-inline-block: getValue($display, "inline-block");
 
 // ------------------------------
 
@@ -185,7 +182,6 @@ $margin-0: 0;
 
 // - * - * - Paddings - * - * -
 $padding-0: 0;
-
 
 // - * - * - Mixins - * - * -
 
@@ -213,7 +209,7 @@ $padding-0: 0;
 }
 
 @mixin title() {
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   color: $navy;
   font-size: $rem-1 + $rem-p6;
   margin: $px-6 0 0 0;

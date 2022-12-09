@@ -1,0 +1,68 @@
+<div class="container" [ngClass]="isShow && data ? 'show' : ''">
+  <div class="box">
+    <div class="close-icon">
+      <img
+        (click)="close()"
+        src="../../../../assets/icons/xmark-solid.svg"
+        alt=""
+      />
+    </div>
+    <div class="content">
+      <img [src]="imgURL + data?.cloudinaryImageId" alt="" />
+
+      <div>
+        <h3 class="food-name">{{ data?.name }}</h3>
+
+        <h4 class="cuisines">
+          Cuisines:
+          <p *ngFor="let x of data?.cuisine">&nbsp; {{ x }},&nbsp;</p>
+        </h4>
+
+        <p>
+          {{ data?.price.discountInfo }} &nbsp;
+          <button
+            class="apply-coupen"
+            (click)="applyCoupen()"
+            *ngIf="data?.price?.discountInfo"
+          >
+            {{ !isCoupenApplied ? "Apply Coupen" : "Applied" }}
+          </button>
+        </p>
+
+        <div class="price-scetion">
+          <table>
+            <tr>
+              <td>Price:</td>
+              <td
+                [ngStyle]="{
+                  'text-decoration': isCoupenApplied ? 'line-through' : 'none'
+                }"
+              >
+                {{ data?.price?.costForTwo }} INR
+              </td>
+            </tr>
+            <tr>
+              <td>TAX</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Total Price</td>
+              <td [ngStyle]="{ color: isCoupenApplied ? 'green' : '' }">
+                {{
+                  isCoupenApplied ? newPrice : data?.price?.costForTwo
+                }}
+                &nbsp; INR
+              </td>
+            </tr>
+          </table>
+          <div>
+            <a (click)="close()">Cancel</a>
+            <button class="addtocart-btn" (click)="addToCart()">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

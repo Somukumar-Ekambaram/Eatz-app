@@ -4,8 +4,14 @@ import { OffersComponent } from './offers.component';
 
 const routes: Routes = [{ path: '', component: OffersComponent }];
 
+/**
+ *
+ *
+ * @export
+ * @class OffersRoutingModule
+ */
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class OffersRoutingModule { }
+export class OffersRoutingModule {}

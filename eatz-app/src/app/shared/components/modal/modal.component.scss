@@ -1,0 +1,108 @@
+@import "../../scss/utilities";
+
+.container {
+  width: $w-10 * 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: $d-flex;
+  background: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+
+  .box {
+    width: 30%;
+    height: 70%;
+    background-color: $white;
+    border-radius: 5px;
+    position: relative;
+    padding: $rem-1;
+    transition: all 5s ease-in-out;
+
+    .close-icon {
+      display: $d-flex;
+      justify-content: end;
+      width: $w-10 * 10;
+
+      img {
+        cursor: pointer;
+        width: 15px;
+      }
+    }
+
+    .content {
+      margin: $rem-1 0;
+
+      img {
+        width: $w-10 * 10;
+        height: $rem-10 * 2;
+        object-fit: cover;
+      }
+
+      .food-name {
+        font-family: "Poppins-Bold";
+        font-size: $rem-1;
+      }
+
+      .cuisines {
+        display: flex;
+        p {
+          font-family: "Poppins-light";
+          color: $darkgrey;
+          font-size: $px-10 + $px-2;
+          margin: 4px 0;
+        }
+      }
+
+      .apply-coupen {
+        width: max-content;
+        height: auto;
+        background-color: $white;
+        border: 1px solid $green;
+        color: $green;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .price-scetion {
+        float: right;
+
+        p {
+          margin: 0.3rem 0;
+          font-size: 14px;
+          letter-spacing: 2px;
+        }
+
+        div {
+          display: $d-flex;
+
+          a {
+            margin: 1.2rem $rem-2;
+            color: $navy;
+            cursor: pointer;
+          }
+          .addtocart-btn {
+            float: right;
+            margin-top: $rem-1;
+            @include getBtnStyle($rem-10, $rem-2);
+          }
+        }
+      }
+    }
+  }
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+td {
+  width: $rem-10;
+}

@@ -21,7 +21,7 @@
       margin: $w-6 $w-2;
 
       h2 {
-        font-family: 'Poppins-medium';
+        font-family: "Poppins-medium";
         font-size: $rem-1 + $rem-p8;
         letter-spacing: $px-2;
         color: $navy;
@@ -43,7 +43,7 @@
 
       .login-btn {
         margin: $rem-1 0;
-        font-family: 'Poppins-medium';
+        font-family: "Poppins-medium";
         letter-spacing: $px-2;
         @include getBtnStyle(($w-10 * 7) + $w-3, $rem-3);
       }

@@ -5,7 +5,12 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { OrdersComponent } from './orders.component';
 import { SharedModule } from '../shared/shared.module';
 
-
+/**
+ *
+ *
+ * @export
+ * @class OrdersModule
+ */
 @NgModule({
   declarations: [
     OrdersComponent

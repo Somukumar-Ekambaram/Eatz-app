@@ -2,8 +2,14 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserModel } from '../shared/models/app.model';
-import { SharedSubjectService } from '../shared/services/shared-subject.service';
+import { SharedSubjectService } from '../shared/services/subjects/shared-subject.service';
 
+/**
+ *
+ *
+ * @export
+ * @class LoginComponent
+ */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -40,7 +46,6 @@ export class LoginComponent {
     localStorage.setItem('username', formValue.username);
     localStorage.setItem('password', formValue.password);
     this.sharedSubject.authGuardSubject.next(true);
-    //console.log('hi')
     this.router.navigate(
       ["/home"],
       {

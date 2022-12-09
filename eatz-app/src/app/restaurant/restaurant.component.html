@@ -1,42 +1,58 @@
 <div class="container-fluid">
   <div class="filter-section">
     <div>
-      <p class="title">Restaurants
+      <p class="title">
+        Restaurants
         <span *ngIf="filteredText">
-          <small>"{{ filteredText }}"   <img class="icon" src="../../assets/icons/filter-circle-xmark-solid.svg" (click)="onViewAll()" alt=""></small>
+          <small
+            >"{{ filteredText }}"
+            <img
+              class="icon"
+              src="../../assets/icons/filter-circle-xmark-solid.svg"
+              (click)="onViewAll()"
+              alt=""
+          /></small>
         </span>
       </p>
     </div>
     <div>
       <app-searchbox
         [suggestions]="restaurants"
-        (sendRestuarentName)="getRestaurantsName($event)"></app-searchbox>
+        (sendRestuarentName)="getRestaurantsName($event)"
+      ></app-searchbox>
     </div>
   </div>
   <section class="list-section">
-    <div class="list-items" *ngFor="let data of restaurants | filter:filteredText" [ngClass]="!data.open ? 'not-available' : ''">
+    <div
+      class="list-items"
+      *ngFor="let data of restaurants | filter : filteredText"
+      [ngClass]="!data.open ? 'not-available' : ''"
+    >
       <div>
-        <img [src]="imgUrl + data.cloudinaryImageId" alt="">
+        <img [src]="imgUrl + data.cloudinaryImageId" alt="" />
       </div>
       <div class="price-section">
         <div>
           <p>{{ data?.name }}</p>
           <span *ngFor="let cuisine of data.cuisine">
-            <span class="grey-txt"><small>{{ cuisine }}</small></span>
+            <span class="grey-txt"
+              ><small>{{ cuisine }}</small></span
+            >
           </span>
           <p class="discount-txt" *ngIf="data?.price?.discountInfo">
-            <small>
-              Discounts: {{ data?.price?.discountInfo }}
-            </small>
+            <small> Discounts: {{ data?.price?.discountInfo }} </small>
           </p>
         </div>
         <div>
-          <p>Rating: 4.1</p>
+          <p>{{ data?.rating }}</p>
           <p>Delivery in {{ data.deliveryTimeInMins }} mins</p>
           <p>{{ data?.price?.costForTwo }} INR for two</p>
-          <button class="see-more-btn">See more</button>
+          <button class="see-more-btn" (click)="onViewData(data)">
+            See more
+          </button>
         </div>
       </div>
     </div>
   </section>
 </div>
+<app-modal></app-modal>
