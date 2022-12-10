@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  ActivatedRoute,
   ActivatedRouteSnapshot,
   CanDeactivate,
   Router,
@@ -7,7 +8,12 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { HomeComponent } from 'src/app/home/home.component';
+import { OffersComponent } from 'src/app/offers/offers.component';
+import { OrdersComponent } from 'src/app/orders/orders.component';
+import { RestaurantComponent } from 'src/app/restaurant/restaurant.component';
 import { IDeActivateComponent } from '../models/app.model';
+import { SharedSubjectService } from '../services/subjects/shared-subject.service';
 
 /**
  *
@@ -20,12 +26,19 @@ import { IDeActivateComponent } from '../models/app.model';
   providedIn: 'root',
 })
 export class PermissionGuard implements CanDeactivate<IDeActivateComponent> {
+
+  isLoggedOut !: boolean;
+
   /**
    * Creates an instance of PermissionGuard.
    * @param {Router} router
    * @memberof PermissionGuard
    */
-  constructor(private router: Router) {}
+  constructor(private router: Router, private sharedSubject: SharedSubjectService) {
+    this.sharedSubject.authGuardSubject.subscribe(res => {
+      this.isLoggedOut = res;
+    })
+  }
 
   /**
    *
@@ -47,24 +60,6 @@ export class PermissionGuard implements CanDeactivate<IDeActivateComponent> {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    return this.isValid(component);
-  }
-
-  /**
-   *
-   *
-   * @param {IDeActivateComponent} component
-   * @return {*}  {(boolean | Observable<boolean> | Promise<boolean>)}
-   * @memberof PermissionGuard
-   */
-  isValid(
-    component: IDeActivateComponent
-  ): boolean | Observable<boolean> | Promise<boolean> {
-    if (component.canExit()) {
-      this.router.navigate(['/login']);
-      return component.canExit();
-    } else {
-      return true;
-    }
+    return !this.isLoggedOut ? component.canExit ? component.canExit() : false : true;
   }
 }

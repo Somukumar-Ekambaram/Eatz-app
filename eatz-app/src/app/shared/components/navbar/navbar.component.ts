@@ -64,6 +64,7 @@ export class NavbarComponent {
     this.cartDetails = [];
     this.cartCount = this.cartDetails.length;
     this.router.navigate(['/login']);
+    this.sharedSubject.authGuardSubject.next(false);
   }
 
   /**

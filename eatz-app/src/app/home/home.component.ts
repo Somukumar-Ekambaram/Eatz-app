@@ -8,6 +8,7 @@ import {
 } from '../shared/models/app.model';
 import { HttpService } from '../shared/services/http/http.service';
 import { SharedSubjectService } from '../shared/services/subjects/shared-subject.service';
+
 /**
  *
  *
@@ -53,12 +54,12 @@ export class HomeComponent implements OnInit, OnDestroy, IDeActivateComponent {
    * @return {*}  {(boolean | Promise<boolean> | Observable<boolean>)}
    * @memberof HomeComponent
    */
-  canExit(): boolean | Promise<boolean> | Observable<boolean> {
+  public canExit(): boolean | Promise<boolean> | Observable<boolean> {
     if (confirm('Do you wish to Please confirm')) {
       return true;
-    } else {
-      return false;
     }
+
+    return false;
   }
 
   /**

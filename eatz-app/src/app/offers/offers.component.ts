@@ -18,8 +18,7 @@ export class OffersComponent implements IDeActivateComponent {
   canExit(): boolean | Observable<boolean> | Promise<boolean> {
     if (confirm('Do you wish to Please confirm')) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 }
