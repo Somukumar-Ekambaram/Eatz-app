@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { pnfConst } from '../../contants/common-constant';
 
 /**
  *
@@ -13,6 +14,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./page-not-found.component.scss'],
 })
 export class PageNotFoundComponent {
+
+  pnfConst = pnfConst;
 
   /**
    * Creates an instance of PageNotFoundComponent.

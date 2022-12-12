@@ -5,13 +5,13 @@
       <div class="top-start">
         <div>
           <div>
-            <p class="txt-one">Food</p>
+            <p class="txt-one">{{ homeConst?.food }}</p>
           </div>
           <div>
-            <p class="txt-two">Discover Restaurants</p>
+            <p class="txt-two">{{ homeConst?.discover_restaurants }}</p>
           </div>
           <div>
-            <p class="txt-two">& Delicious Food</p>
+            <p class="txt-two">{{ homeConst?.delicious_food }}</p>
           </div>
         </div>
         <div class="auto-com" style="margin: 3rem 0 !important">
@@ -43,7 +43,7 @@
           <span class="red-block"></span>
         </div>
         <div class="align-center">
-          <p class="ad-booking-txt">advance booking</p>
+          <p class="ad-booking-txt">{{ homeConst?.advance_booking }}</p>
         </div>
         <div class="auto-com">
           <app-searchbox
@@ -53,11 +53,11 @@
         </div>
         <div class="align-evenly">
           <div>
-            <p class="txt-strong">Date</p>
+            <p class="txt-strong">{{ homeConst?.date }}</p>
             <input class="txt-light custom-date-picker" type="date" />
           </div>
           <div>
-            <p class="txt-strong">Time</p>
+            <p class="txt-strong">{{ homeConst?.time }}</p>
             <input
               type="time"
               class="txt-light custom-date-picker"
@@ -66,8 +66,8 @@
             />
           </div>
           <div>
-            <p class="txt-strong">Guests</p>
-            <p class="txt-light">2peoples</p>
+            <p class="txt-strong">{{ homeConst?.guests }}</p>
+            <p class="txt-light">{{ homeConst?.people }}</p>
           </div>
         </div>
       </div>
@@ -77,17 +77,14 @@
   <!-- Offers Section -->
   <section class="offer-fluid">
     <div class="offer-title">
-      <p>Explore Our Food</p>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod
-      </p>
-      <p>tempor invidunt ut labore et dolore magna</p>
+      <p>{{ homeConst?.explore_our_food }}</p>
+      <p>{{ homeConst?.text_one }}</p>
+      <p>{{ homeConst?.text_two }}</p>
     </div>
     <app-offer-grid></app-offer-grid>
   </section>
   <footer>
-    <span>&#169; <small class="small-txt">2022 Indianpix</small></span>
+    <span>&#169; <small class="small-txt">{{ homeConst?.copy_right }}</small></span>
     <div>
       <div class="icons">
         <img src="../../assets/icons/facebook.svg" alt="" />
@@ -101,7 +98,7 @@
       <div class="icons">
         <img src="../../assets/icons/youtube.svg" alt="" />
       </div>
-      &#169;&nbsp;<small class="small-txt"> 2022 Indianpix</small>
+      &#169;&nbsp;<small class="small-txt"> {{ homeConst?.copy_right }}</small>
     </div>
   </footer>
 </div>

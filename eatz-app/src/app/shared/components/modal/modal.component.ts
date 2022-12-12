@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { environment } from 'src/environments/envirtonment';
+import { modalConst } from '../../contants/common-constant';
 import { RestaurantModel } from '../../models/app.model';
 import { SharedSubjectService } from '../../services/subjects/shared-subject.service';
 
@@ -23,6 +24,8 @@ export class ModalComponent {
   newPrice = 0;
 
   imgURL = environment.imageURL;
+
+  modalConst = modalConst;
 
   /**
    * Creates an instance of ModalComponent.

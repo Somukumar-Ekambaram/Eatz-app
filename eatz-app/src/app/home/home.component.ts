@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
+import { homeConst } from '../shared/contants/common-constant';
 import {
   IDeActivateComponent,
   LocationModel,
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit, OnDestroy, IDeActivateComponent {
   geoLocation!: LocationModel;
   userType!: string;
 
+  homeConst = homeConst;
   /**
    * Creates an instance of HomeComponent.
    * @param {HttpService} httpService

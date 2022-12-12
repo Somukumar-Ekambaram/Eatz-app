@@ -14,7 +14,7 @@
         <h3 class="food-name">{{ data?.name }}</h3>
 
         <h4 class="cuisines">
-          Cuisines:
+          {{ modalConst?.cuisines }}
           <p *ngFor="let x of data?.cuisine">&nbsp; {{ x }},&nbsp;</p>
         </h4>
 
@@ -32,33 +32,33 @@
         <div class="price-scetion">
           <table>
             <tr>
-              <td>Price:</td>
+              <td>{{ modalConst?.price }}</td>
               <td
                 [ngStyle]="{
                   'text-decoration': isCoupenApplied ? 'line-through' : 'none'
                 }"
               >
-                {{ data?.price?.costForTwo }} INR
+                {{ data?.price?.costForTwo }} {{ modalConst?.inr }}
               </td>
             </tr>
             <tr>
-              <td>TAX</td>
+              <td>{{ modalConst?.tax }}</td>
               <td>0</td>
             </tr>
             <tr>
-              <td>Total Price</td>
+              <td>{{ modalConst?.total_price }}</td>
               <td [ngStyle]="{ color: isCoupenApplied ? 'green' : '' }">
                 {{
                   isCoupenApplied ? newPrice : data?.price?.costForTwo
                 }}
-                &nbsp; INR
+                &nbsp; {{ modalConst?.inr }}
               </td>
             </tr>
           </table>
           <div>
-            <a (click)="close()">Cancel</a>
+            <a (click)="close()">{{ modalConst?.cancel }}</a>
             <button class="addtocart-btn" (click)="addToCart()">
-              Add to cart
+              {{ modalConst?.addtocart }}
             </button>
           </div>
         </div>

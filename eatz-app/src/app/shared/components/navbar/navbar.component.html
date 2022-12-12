@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="title">
-    <h1><a routerLink="home" [queryParams]="{ type: type }">eatz</a></h1>
+    <h1><a routerLink="home" [queryParams]="{ type: type }">{{ navConst?.title }}</a></h1>
   </div>
   <div class="mid-items" [ngStyle]="{ width: isUser ? '' : '35%' }">
     <ul>
@@ -9,7 +9,7 @@
           routerLink="/home"
           routerLinkActive="active"
           [queryParams]="{ type: type }"
-          >Home</a
+          >{{ navConst?.home }}</a
         >
       </li>
       <li>
@@ -17,7 +17,7 @@
           routerLink="/offers"
           routerLinkActive="active"
           [queryParams]="{ type: type }"
-          >Offers</a
+          >{{ navConst?.offers }}</a
         >
       </li>
       <li>
@@ -25,7 +25,7 @@
           routerLink="/restaurant"
           routerLinkActive="active"
           [queryParams]="{ type: type }"
-          >Restaurants</a
+          >{{ navConst?.restaurant }}</a
         >
       </li>
       <li *ngIf="isUser">
@@ -33,7 +33,7 @@
           routerLink="/orders"
           routerLinkActive="active"
           [queryParams]="{ type: type }"
-          >Orders</a
+          >{{ navConst?.orders }}</a
         >
       </li>
       <li>
@@ -41,7 +41,7 @@
           routerLink="/account"
           routerLinkActive="active"
           [queryParams]="{ type: type }"
-          >Account</a
+          >{{ navConst?.account }}</a
         >
       </li>
     </ul>
@@ -50,7 +50,7 @@
     <ul>
       <li *ngIf="type" class="drop-down">
         <a (click)="onViewCart()"
-          >Cart
+          >{{ navConst?.cart }}
           <sup class="count" *ngIf="cartCount > 0"
             >&nbsp;{{ cartCount }}&nbsp;</sup
           >
@@ -67,7 +67,7 @@
         </div>
       </li>
       <li *ngIf="type">
-        <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+        <a style="cursor: pointer" (click)="onLogout()">{{ navConst?.logout }}</a>
       </li>
     </ul>
   </div>

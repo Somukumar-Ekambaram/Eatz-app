@@ -9,6 +9,7 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/envirtonment';
+import { modalConst } from '../../contants/common-constant';
 import { OfferModel } from '../../models/app.model';
 import { HttpService } from '../../services/http/http.service';
 import { SharedSubjectService } from '../../services/subjects/shared-subject.service';
@@ -38,6 +39,8 @@ export class OfferGridComponent implements OnInit, OnDestroy {
   urlpath!: any;
 
   imgUrl = environment.imageURL;
+
+  gridConst = modalConst;
 
   /**
    * Creates an instance of OfferGridComponent.

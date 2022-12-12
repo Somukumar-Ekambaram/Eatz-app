@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { navbarConst } from '../../contants/common-constant';
 import { OfferModel } from '../../models/app.model';
 import { SharedSubjectService } from '../../services/subjects/shared-subject.service';
 
@@ -20,6 +21,7 @@ export class NavbarComponent {
   isCartClicked = false;
   cartCount: number = 0;
   cartDetails: OfferModel['result'] = [];
+  navConst = navbarConst;
 
   /**
    * Creates an instance of NavbarComponent.

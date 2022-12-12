@@ -5,6 +5,7 @@ import {
   OnChanges,
   Output,
 } from '@angular/core';
+import { commonConst } from '../../contants/common-constant';
 import { RestaurantModel } from '../../models/app.model';
 
 /**
@@ -31,6 +32,8 @@ export class SearchboxComponent implements OnChanges {
 
   searchtext = '';
   isSelected = false;
+
+  searchConst = commonConst;
 
   /**
    *

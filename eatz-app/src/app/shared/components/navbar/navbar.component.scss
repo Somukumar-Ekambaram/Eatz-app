@@ -89,8 +89,7 @@
 .carot-down {
   width: 12px;
   color: $white;
-  //background-color: white !important;
-  margin: -3px 0.5rem;
+  margin: -($px-3) 0.5rem;
 }
 
 .drop-down {
@@ -102,14 +101,14 @@
     background-color: $white;
     z-index: 3;
     width: max-content;
-    max-height: 10rem;
+    max-height: $rem-10;
     overflow-y: auto;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    box-shadow: 0 $px-1 $px-5 rgba(0, 0, 0, 0.1);
+    border-radius: $px-5;
 
     .li-item {
-      padding: 1rem;
-      font-size: 12px;
+      padding: $rem-1;
+      font-size: $px-6 * 2;
       text-align: start;
       margin: $margin-0;
       display: $d-block;
